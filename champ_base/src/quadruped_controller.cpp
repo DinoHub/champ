@@ -103,11 +103,11 @@ void QuadrupedController::controlLoop_(const ros::TimerEvent& event)
     publishJoints_(target_joint_positions);
 }
 
-void QuadrupedController::cmdVelCallback_(const geometry_msgs::TwistStamped::ConstPtr& msg)
+void QuadrupedController::cmdVelCallback_(const geometry_msgs::Twist::ConstPtr& msg)
 {
-    req_vel_.linear.x = msg->twist.linear.x;
-    req_vel_.linear.y = msg->twist.linear.y;
-    req_vel_.angular.z = msg->twist.angular.z;
+    req_vel_.linear.x = msg->linear.x;
+    req_vel_.linear.y = msg->linear.y;
+    req_vel_.angular.z = msg->angular.z;
 }
 
 void QuadrupedController::cmdPoseCallback_(const geometry_msgs::Pose::ConstPtr& msg)

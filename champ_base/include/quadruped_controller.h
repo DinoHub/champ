@@ -40,7 +40,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <champ/leg_controller/leg_controller.h>
 #include <champ/kinematics/kinematics.h>
 
-#include <geometry_msgs/TwistStamped.h>
+#include <geometry_msgs/Twist.h>
 #include <geometry_msgs/Pose.h>
 #include "tf/transform_datatypes.h"
 
@@ -81,7 +81,7 @@ class QuadrupedController
     void publishJoints_(float target_joints[12]);
     void publishFootContacts_(bool foot_contacts[4]);
 
-    void cmdVelCallback_(const geometry_msgs::TwistStamped::ConstPtr& msg);
+    void cmdVelCallback_(const geometry_msgs::Twist::ConstPtr& msg);
     void cmdPoseCallback_(const geometry_msgs::Pose::ConstPtr& msg);
 
     public:
